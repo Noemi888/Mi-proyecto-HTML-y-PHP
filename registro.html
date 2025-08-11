@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Registro de usuario – Aerolínea Mexicana</title>
+  <style>
+    :root{
+      --bg:#F5F0E6;
+      --text:#0A174E;
+      --accent:#0A174E;
+      --card:#ffffff;
+      --shadow:0 10px 25px rgba(0,0,0,.10);
+      --radius:18px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0; background:var(--bg); color:var(--text);
+      font-family:Arial, Helvetica, sans-serif;
+      min-height:100vh; display:flex; flex-direction:column;
+    }
+
+    /* Encabezado igual al login (compacto) */
+    header{
+      display:flex; align-items:center; gap:14px;
+      padding:16px 20px; background:var(--bg);
+      box-shadow:0 2px 6px rgba(0,0,0,.06);
+    }
+    header img.logo{width:52px;height:52px;object-fit:cover;border-radius:8px;background:#eee}
+    header .title{margin:0;font-weight:800;letter-spacing:.3px;font-size:32px}
+
+    .wrap{flex:1; display:flex; align-items:center; justify-content:center; padding:32px 16px 48px}
+
+    .card{
+      width:min(520px, 94vw); background:var(--card);
+      border-radius:var(--radius); box-shadow:var(--shadow);
+      padding:26px 24px 24px;
+    }
+    .card h2{margin:0 0 6px; text-align:center; font-size:22px; letter-spacing:.4px}
+    .subtitle{margin:0 0 16px; text-align:center; color:#364; opacity:.0}
+
+    label{display:block; font-weight:700; margin-top:12px; margin-bottom:6px}
+    .input{
+      width:100%; padding:12px 14px; border:2px solid var(--accent);
+      border-radius:12px; outline:none; font-size:16px; background:#fff;
+    }
+    .input:focus{box-shadow:0 0 0 4px rgba(10,23,78,.15)}
+
+    /* Password con ojo azul */
+    .input-wrap{position:relative}
+    .toggle-eye{
+      position:absolute; right:10px; top:50%; transform:translateY(-50%);
+      width:38px;height:38px; display:grid; place-items:center;
+      border:none;background:transparent; cursor:pointer; padding:0;
+    }
+    .toggle-eye svg{width:26px;height:26px;stroke:var(--accent);fill:none;stroke-width:2.2}
+
+    .btn{
+      width:100%; margin-top:18px; padding:12px 14px; border:none;
+      border-radius:12px; background:var(--accent); color:#fff;
+      font-weight:700; cursor:pointer;
+    }
+
+    .links{
+      margin-top:14px; text-align:center; display:flex; flex-direction:column; gap:6px;
+    }
+    .link{color:var(--accent); text-decoration:none; font-weight:700}
+    .link:hover{text-decoration:underline}
+
+    footer{background:#1c3738;color:#F5F0E6;text-align:center;padding:16px;font-weight:700}
+  </style>
+</head>
+<body>
+  <header>
+    <img class="logo" src="Avion.jpg" alt="Logo Aerolínea">
+    <h1 class="title">Aerolínea Mexicana</h1>
+  </header>
+
+  <main class="wrap">
+    <section class="card">
+      <h2>REGISTRO DE USUARIO</h2>
+
+      <form action="registro.php" method="post" autocomplete="off">
+        <label for="nombre">nombre</label>
+        <input class="input" type="text" id="nombre" name="nombre" required>
+
+        <label for="apellido">apellido</label>
+        <input class="input" type="text" id="apellido" name="apellido" required>
+
+        <label for="fechadn">fecha de nacimiento</label>
+        <input class="input" type="date" id="fechadn" name="fechadn" required>
+
+        <label for="correo">correo</label>
+        <input class="input" type="email" id="correo" name="correo" placeholder="tu@correo.com" required>
+
+        <label for="numerotel">teléfono</label>
+        <input class="input" type="tel" id="numerotel" name="numerotel" required>
+
+        <label for="contrasena">contraseña</label>
+        <div class="input-wrap">
+          <input class="input" type="password" id="contrasena" name="contrasena" required>
+          <button class="toggle-eye" type="button" aria-label="Mostrar u ocultar contraseña" aria-pressed="false">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7S1 12 1 12z"/>
+              <circle cx="12" cy="12" r="3.5" fill="none"/>
+            </svg>
+          </button>
+        </div>
+
+        <button class="btn" type="submit">Crear cuenta</button>
+
+        <div class="links">
+          <a class="link" href="loggin.html">Ya tengo cuenta</a>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <footer>Contactos</footer>
+
+  <script>
+    // Toggle ojo
+    const btn = document.querySelector('.toggle-eye');
+    const pass = document.getElementById('contrasena');
+    const iconOpen = `<svg viewBox="0 0 24 24"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7S1 12 1 12z"/><circle cx="12" cy="12" r="3.5" fill="none"/></svg>`;
+    const iconClosed = `<svg viewBox="0 0 24 24"><path d="M1 12s4-7 11-7c2.7 0 5 .9 6.9 2.1M23 12s-4 7-11 7c-2.7 0-5-.9-6.9-2.1"/><line x1="3" y1="3" x2="21" y2="21"></line></svg>`;
+    btn.addEventListener('click', () => {
+      const show = pass.type === 'password';
+      pass.type = show ? 'text' : 'password';
+      btn.innerHTML = show ? iconClosed : iconOpen;
+      btn.setAttribute('aria-pressed', show ? 'true' : 'false');
+    });
+  </script>
+</body>
+</html>

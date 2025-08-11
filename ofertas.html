@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ofertas – Aerolínea Mexicana</title>
+  <style>
+    :root{
+      --bg:#F5F0E6;
+      --primary:#0A174E;
+      --white:#ffffff;
+      --menu-gray:#4b4b4b;
+      --menu-black:#000;
+      --footer-green:#132a25;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--primary)}
+
+    /* Header */
+    .topbar{
+      background:var(--bg);
+      display:flex;align-items:center;justify-content:space-between;
+      padding:14px 18px;border-bottom:1px solid #e9e6de;
+    }
+    .top-left{display:flex;align-items:center;gap:12px}
+    .logo{height:36px;width:auto}
+    .brand{font-size:28px;font-weight:800;letter-spacing:.3px;text-decoration:none;color:inherit}
+    .welcome{font-weight:600}
+
+    /* Menú */
+    .menubar{background:var(--menu-gray);color:#fff;padding:10px 16px;cursor:pointer;user-select:none}
+    .menubar span{font-weight:700}
+    .menu-panel{background:var(--menu-black);color:#fff;display:none}
+    .menu-panel a{
+      display:block;color:#fff;text-decoration:none;padding:12px 16px;border-bottom:1px solid #1a1a1a;
+    }
+    .menu-panel a:hover{background:#111}
+
+    /* Contenido */
+    main{max-width:1100px;margin:24px auto;padding:0 16px}
+    h2.title{margin:6px 0 16px 0;text-align:center}
+    .offers-table{
+      border-collapse:collapse;width:100%;background:var(--white);
+      border-radius:12px;overflow:hidden;box-shadow:0 2px 10px rgba(0,0,0,.08)
+    }
+    .offers-table td{border:1px solid #e5e7eb;text-align:center;padding:14px;vertical-align:top}
+    .offers-table img{width:120px;height:120px;object-fit:cover;border-radius:8px}
+    .descripcion{margin-top:8px;font-size:14px;line-height:1.35}
+    a{text-decoration:none;color:inherit}
+
+    /* Footer */
+    .footer{
+      background:var(--footer-green);color:#fff;text-align:center;
+      padding:28px 16px;margin-top:40px
+    }
+    .footer h3{margin:0 0 14px 0;font-size:22px}
+    .footer p{margin:8px 0;font-size:18px}
+    .footer a{color:#fff;text-decoration:none;margin:0 8px}
+    .footer a:hover{text-decoration:underline}
+  </style>
+  <script>
+    function toggleMenu(){
+      const panel = document.getElementById('menu-panel');
+      panel.style.display = (panel.style.display === 'block') ? 'none' : 'block';
+    }
+  </script>
+</head>
+<body>
+
+  <!-- Header -->
+  <div class="topbar">
+    <div class="top-left">
+      <img src="Avion.jpg" class="logo" alt="Logo Avión" onerror="this.style.display='none'">
+      <a href="aeropuerto.php" class="brand">Aerolínea Mexicana</a>
+    </div>
+    <div class="welcome">Bienvenido</div>
+  </div>
+
+  <!-- Menú -->
+  <div class="menubar" onclick="toggleMenu()">☰ <span>Menú</span></div>
+  <nav id="menu-panel" class="menu-panel">
+    <a href="aeropuerto.php">Inicio</a>
+    <a href="mostrar.php">Mis datos</a>
+    <a href="ofertas.html">Ofertas Especiales</a>
+    <a href="ayuda.html">Ayuda</a>
+    <a href="logout.php">Cerrar Sesión</a>
+  </nav>
+
+  <!-- Contenido -->
+  <main>
+    <h2 class="title">Ofertas especiales</h2>
+
+    <table class="offers-table">
+      <tr>
+        <td>
+          <img src="of1.jpeg" alt="Imagen 1">
+          <div class="descripcion">Aguascalientes | Real de Asientos<br>5 noches a solo $18,000</div>
+        </td>
+        <td>
+          <img src="of2.jpeg" alt="Imagen 2">
+          <div class="descripcion">Baja California | San Felipe<br>4 noches y 5 días a solo $23,000</div>
+        </td>
+        <td>
+          <img src="of3.jpeg" alt="Imagen 3">
+          <div class="descripcion">Baja California Sur | Los Cabos<br>4 noches a solo $41,000</div>
+        </td>
+        <td>
+          <img src="of4.jpeg" alt="Imagen 4">
+          <div class="descripcion">Campeche | Calakmul<br>3 noches y 4 días a solo $29,000</div>
+        </td>
+        <td>
+          <img src="of5.jpeg" alt="Imagen 5">
+          <div class="descripcion">Chiapas | San Cristóbal de las Casas<br>5 noches y 7 días en $30,000</div>
+        </td>
+        <td>
+          <img src="of6.jpg" alt="Imagen 6">
+          <div class="descripcion">Chihuahua | Batopilas<br>3 noches a solo $22,000</div>
+        </td>
+        <td>
+          <img src="of7.jpeg" alt="Imagen 7">
+          <div class="descripcion">Ciudad de México | Castillo de Chapultepec<br>1 noche y 2 días a solo $21,500</div>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <img src="of8.jpeg" alt="Imagen 8">
+          <div class="descripcion">Coahuila | Saltillo<br>5 noches a solo $21,890</div>
+        </td>
+        <td>
+          <img src="of9.jpeg" alt="Imagen 9">
+          <div class="descripcion">Colima | Manzanillo<br>4 noches a solo $28,199</div>
+        </td>
+        <td>
+          <img src="of10.jpeg" alt="Imagen 10">
+          <div class="descripcion">Estado de México | Valle de Bravo<br>6 noches y 7 días a solo $49,999</div>
+        </td>
+        <td>
+          <img src="of11.jpeg" alt="Imagen 11">
+          <div class="descripcion">Guanajuato | Comonfort<br>4 noches a solo $34,000</div>
+        </td>
+        <td>
+          <img src="of12.jpeg" alt="Imagen 12">
+          <div class="descripcion">Guerrero | Acapulco<br>6 noches a solo $79,599</div>
+        </td>
+        <td>
+          <img src="of13.jpeg" alt="Imagen 13">
+          <div class="descripcion">Hidalgo | Tecozautla<br>4 noches a solo $21,000</div>
+        </td>
+        <td>
+          <img src="of14.jpeg" alt="Imagen 14">
+          <div class="descripcion">Jalisco | Tequila<br>5 noches y 6 días a solo $59,999</div>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <img src="of15.jpeg" alt="Imagen 15">
+          <div class="descripcion">Michoacán | Cuitzeo<br>4 noches a solo $32,999</div>
+        </td>
+        <td>
+          <img src="of16.jpeg" alt="Imagen 16">
+          <div class="descripcion">Morelos | Tepoztlán<br>3 noches y 5 días a solo $42,799</div>
+        </td>
+        <td>
+          <img src="of17.jpeg" alt="Imagen 17">
+          <div class="descripcion">Nayarit | San Blas<br>5 noches a solo $89,000</div>
+        </td>
+        <td>
+          <img src="of18.jpeg" alt="Imagen 18">
+          <div class="descripcion">Nuevo León | Santiago<br>4 noches a solo $67,999</div>
+        </td>
+        <td>
+          <img src="of19.jpeg" alt="Imagen 19">
+          <div class="descripcion">Oaxaca | Mazunte<br>6 noches y 8 días a solo $93,000</div>
+        </td>
+        <td>
+          <img src="of20.jpeg" alt="Imagen 20">
+          <div class="descripcion">Puebla | Cholula<br>4 noches y 5 días a solo $48,899</div>
+        </td>
+        <td>
+          <img src="of21.jpeg" alt="Imagen 21">
+          <div class="descripcion">Querétaro | San Joaquín<br>4 noches a solo $56,000</div>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <img src="of22.jpeg" alt="Imagen 22">
+          <div class="descripcion">Quintana Roo | Cancún<br>7 noches y 9 días a solo $108,799</div>
+        </td>
+        <td>
+          <img src="of23.jpeg" alt="Imagen 23">
+          <div class="descripcion">San Luis Potosí | Real de Catorce<br>4 noches a solo $59,999</div>
+        </td>
+        <td>
+          <img src="of24.jpeg" alt="Imagen 24">
+          <div class="descripcion">Sinaloa | Mazatlán<br>5 noches a solo $87,299</div>
+        </td>
+        <td>
+          <img src="of25.jpeg" alt="Imagen 25">
+          <div class="descripcion">Tabasco | Teapa<br>4 noches a solo $33,800</div>
+        </td>
+        <td>
+          <img src="of26.jpeg" alt="Imagen 26">
+          <div class="descripcion">Tamaulipas | Cd. Victoria<br>3 noches y 2 días a solo $21,000</div>
+        </td>
+        <td>
+          <img src="of27.jpeg" alt="Imagen 27">
+          <div class="descripcion">Tlaxcala | Tlaxco<br>5 noches a solo $31,599</div>
+        </td>
+        <td>
+          <img src="of28.jpeg" alt="Imagen 28">
+          <div class="descripcion">Veracruz | Xalapa<br>4 noches y 5 días a solo $68,999</div>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <img src="of29.jpeg" alt="Imagen 29">
+          <div class="descripcion">Yucatán | Espita<br>4 noches a $89,799</div>
+        </td>
+        <td>
+          <img src="of30.jpeg" alt="Imagen 30">
+          <div class="descripcion">Zacatecas | Fresnillo<br>4 noches a solo $47,799</div>
+        </td>
+        <td>
+          <img src="of31.jpeg" alt="Imagen 31">
+          <div class="descripcion">Durango | Mapimí<br>3 noches a solo $27,199</div>
+        </td>
+        <td>
+          <img src="of32.jpeg" alt="Imagen 32">
+          <div class="descripcion">Sonora | Hermosillo<br>4 noches a solo $37,099</div>
+        </td>
+      </tr>
+    </table>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <h3>Contacto</h3>
+    <p><strong>Email:</strong> noemiherp880@gmail.com</p>
+    <p><strong>Redes Sociales:</strong>
+      <a href="https://www.facebook.com/share/1JVca8wJn4/" target="_blank" rel="noopener">Facebook</a>
+      <a href="https://www.instagram.com/karen.noemihd?utm_source=qr&igsh=bWV1M3MxaTMya3p0" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://vt.tiktok.com/ZSStE2HgH/" target="_blank" rel="noopener">TikTok</a>
+    </p>
+    <p style="margin-top:14px;">Aerolínea Mexicana.</p>
+  </footer>
+
+</body>
+</html>

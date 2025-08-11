@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Iniciar sesión – Aerolínea Mexicana</title>
+  <style>
+    :root{--bg:#F5F0E6;--ink:#0A174E;--card:#fff;--brand:#0A174E;}
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--ink)}
+    header{display:flex;align-items:center;gap:12px;padding:16px 20px}
+    header img{width:46px;height:46px;border-radius:8px;object-fit:cover;background:#eee}
+    header h1{margin:0;font-size:28px;font-weight:800}
+    .box{max-width:520px;margin:40px auto;background:#fff;padding:24px;border-radius:16px;box-shadow:0 10px 25px rgba(0,0,0,.08)}
+    h2{margin:0 0 6px;text-align:center}
+    p.tip{margin:0 0 18px;text-align:center;color:#667085;font-size:14px}
+    label{display:block;margin:10px 0 6px;font-weight:700}
+    input{width:100%;padding:12px;border:1px solid #D0D5DD;border-radius:12px;font-size:16px}
+    .eye{position:relative}
+    .eye input{padding-right:44px}
+    .eye button{position:absolute;right:10px;top:50%;transform:translateY(-50%);border:none;background:transparent;cursor:pointer}
+    .eye svg{width:22px;height:22px;stroke:#0A174E}
+    .btn{width:100%;margin-top:16px;background:#0A174E;color:#fff;border:none;border-radius:12px;padding:12px 16px;font-weight:700;cursor:pointer}
+    .links{margin-top:14px;text-align:center}
+    .links a{color:#0A174E;text-decoration:none}
+    footer{background:#132a25;color:#fff;text-align:center;padding:16px;margin-top:40px}
+  </style>
+</head>
+<body>
+<header>
+  <img src="Avion.jpg" alt="Logo Aerolínea">
+  <h1>Aerolínea Mexicana</h1>
+</header>
+
+<div class="box">
+  <h2>INICIAR SESIÓN</h2>
+
+  <form action="procesar_loggin.php" method="post" autocomplete="on">
+    <label for="correo">correo</label>
+    <input type="email" id="correo" name="correo" placeholder="tu@correo.com" required>
+
+    <label for="contrasena">contraseña</label>
+    <div class="eye">
+      <input type="password" id="contrasena" name="contrasena" placeholder="••••••••" required>
+      <button type="button" aria-label="Mostrar/Ocultar" onclick="togglePass()">
+        <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M2.458 12C3.732 7.943 7.523 5 12 5c4.477 0 8.268 2.943 9.542 7-1.274 4.057-5.065 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
+        </svg>
+      </button>
+    </div>
+
+    <button class="btn" type="submit">Entrar</button>
+
+    <div class="links">
+      <a href="registro.html">Crear cuenta</a>
+    </div>
+  </form>
+</div>
+
+  <footer class="footer">
+    <h3>Contacto</h3>
+    <p><strong>Email:</strong> noemiherp880@gmail.com</p>
+    <p><strong>Redes Sociales:</strong>
+      <a href="https://www.facebook.com/share/1JVca8wJn4/" target="_blank" rel="noopener">Facebook</a>
+      <a href="https://www.instagram.com/karen.noemihd?utm_source=qr&igsh=bWV1M3MxaTMya3p0" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://vt.tiktok.com/ZSStE2HgH/" target="_blank" rel="noopener">TikTok</a>
+    </p>
+    <p style="margin-top:14px;">Aerolínea Mexicana.</p>
+  </footer>
+
+<script>
+  function togglePass(){
+    const i = document.getElementById('contrasena');
+    i.type = (i.type === 'password') ? 'text' : 'password';
+  }
+</script>
+</body>
+</html>
